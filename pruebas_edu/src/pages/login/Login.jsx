@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import loginImage from "../assets/LOGIN_IMG.png";
-import googleImage from "../assets/icons8-google-480.png";
-import intelectoImage from "../assets/INTELECTO_LOGO.png";
+import loginImage from "../../assets/LOGIN_IMG.png";
+import googleImage from "../../assets/icons8-google-480.png";
+import intelectoImage from "../../assets/INTELECTO_LOGO.png";
 
 export function Login() {
   const [showPassword, setShowPassword] = useState(false);
