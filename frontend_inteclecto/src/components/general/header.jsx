@@ -33,12 +33,12 @@ export function Header() {
           <NavLink to={"/login"} href="#" className="text-black text-lg">
             Inicar Sesión
           </NavLink>
-          <a
-            href="#"
+          <NavLink 
+          to={"/registro"}
             className="text-red-500 text-lg border border-red-500 mx-7 px-8 py-2"
           >
             Registrar
-          </a>
+          </NavLink>
         </div>
       )}
       <nav>
@@ -103,7 +103,7 @@ export function Header() {
             alt="Logo de la Universidad"
             className="h-16 object-cover rounded-full px-0 mr-2"
           />
-
+          <NavLink to={"/perfil"} >
           <svg
             className="cursor-pointer"
             width="30"
@@ -118,6 +118,7 @@ export function Header() {
               fill-opacity="0.7"
             />
           </svg>
+          </NavLink>
         </div>
       )}
     </header>
