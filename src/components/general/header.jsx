@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import intelectoImage from "../../assets/INTELECTO_LOGO.png";
 import usuarioImage from "../../assets/usuario.png";
 export function Header() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
   return (
     <header className="flex items-center p-1 bg-white border-b border-gray-800">
       <div className="flex items-center space-x-4">
@@ -124,6 +124,7 @@ export function Header() {
                 fill-opacity="0.7"
               />
             </svg>
+            
           </NavLink>
         </div>
       )}

@@ -8,10 +8,9 @@ export function Login() {
 
   return (
     <section className="flex flex-col lg:flex-row min-h-screen justify-center items-stretch">
-      {/* Contenedor del Formulario */}
       <div className="flex-1 max-w-1/2 p-10 shadow-lg rounded-lg bg-white flex flex-col items-center justify-center">
         <div className="mb-8 text-center">
-          <img src={intelectoImage} alt="Logo de la Universidad" className="w-60 mx-auto" />
+          <img src={intelectoImage} alt="Intelecto" className="w-60 mx-auto" />
         </div>
 
         <form className="w-full max-w-md space-y-6">
