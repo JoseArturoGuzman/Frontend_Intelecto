@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
 import intelectoImage from "../../assets/INTELECTO_LOGO.png";
 import usuarioImage from "../../assets/usuario.png";
 export function Header() {
@@ -6,23 +7,32 @@ export function Header() {
   return (
     <header className="flex items-center p-1 bg-white border-b border-gray-800">
       <div className="flex items-center space-x-4">
+        <NavLink to="/">
         <img
           src={intelectoImage}
           alt="Logo de la Universidad"
           className="w-34 h-28 object-cover rounded-full px-8"
         />
+        </NavLink>
         <div className="w-px h-20 bg-black "></div>
-        <a href="#" className="text-red-500 text-lg px-16">
-          {" "}
+        <div>
+        <NavLink to="/"
+          className={({ isActive }) =>
+            !isActive
+              ?"text-black text-lg hover:text-red-600 mx-7"
+              :"text-red-500 text-lg mx-7"
+          }>
           Pagina Principal
-        </a>
+        </NavLink>
+        </div>
+       
       </div>
 
       {!isLoggedIn && (
         <div className="ml-auto ">
-          <a href="#" className="text-black text-lg">
+          <NavLink to={"/login"} href="#" className="text-black text-lg">
             Inicar Sesión
-          </a>
+          </NavLink>
           <a
             href="#"
             className="text-red-500 text-lg border border-red-500 mx-7 px-8 py-2"
@@ -32,24 +42,56 @@ export function Header() {
         </div>
       )}
       <nav>
-        <ul className="flex space-x-4">
+        <ul className="flex space-x-4 ">
           {isLoggedIn && (
             <>
               <li>
-                <a href="#" className="text-black text-lg">
-                  Favorito
-                </a>
+                <NavLink
+                to={"/favoritos"}
+                 className={({ isActive }) =>
+                  !isActive
+                    ?"text-black text-lg  hover:text-red-600 mx-7"
+                    :"text-red-500 text-lg mx-7"
+                }>
+                  Favoritos
+                </NavLink>
               </li>
               <li>
-                <a href="#" className="text-black text-lg">
-                  Mi lista de lectura
-                </a>
+                <NavLink
+                to={"/mi-lista-de-lectura"}
+                className={({ isActive }) =>
+                  !isActive
+                    ?"text-black text-lg hover:text-red-600  mx-7"
+                    :"text-red-500 text-lg mx-7"
+}>
+              
+                  Mi Lista de Lectura
+                </NavLink>
               </li>
               <li>
-                <a href="#" className="text-black text-lg">
+                <NavLink
+                to={"/historial"} 
+                className={({ isActive }) =>
+                  !isActive
+                    ?"text-black text-lg hover:text-red-600  mx-7"
+                    :"text-red-500 text-lg mx-7"
+                }>
                   Historial
-                </a>
+                </NavLink>
               </li>
+              <li>
+                <NavLink
+                to={"/foro"}
+                className={({ isActive }) =>
+                  !isActive
+                    ?"text-black text-lg hover:text-red-600  mx-7"
+                    :"text-red-500 text-lg mx-7"
+                }>
+               
+                  Foro
+                </NavLink>
+              </li>
+              
             </>
           )}
         </ul>
