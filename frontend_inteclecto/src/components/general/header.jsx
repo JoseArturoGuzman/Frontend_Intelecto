@@ -51,7 +51,7 @@ export function Header() {
                 <a href="#" className="text-black text-lg">Historial</a>
             </li>  
             <li>
-                <img src="../../assets/icons8-google-48.png" alt="" className="w-10"/>
+                <img src="../../assets/icons8-google-480.png" alt="" className="w-10"/>
             </li>
             <li>
                 lasa
