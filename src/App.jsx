@@ -7,6 +7,7 @@ import { Mi_lista_lectura } from "./pages/mi_lista_lectura/mi_lista_lectura";
 import { Favoritos } from "./pages/favoritos/favoritos";
 import { Registro } from "./pages/registro/registro";
 import { Perfil } from "./pages/perfil/perfil";
+import { Error } from "./pages/error/error";
  export default function App() {
   return (
     <BrowserRouter>
@@ -34,6 +35,9 @@ import { Perfil } from "./pages/perfil/perfil";
           } />
           <Route path="/perfil" element={
           <Perfil />
+          } />
+          <Route path="/*" element={
+          <Error />
           } />
         
       </Routes>
