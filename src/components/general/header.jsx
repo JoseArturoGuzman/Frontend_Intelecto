@@ -1,16 +1,26 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate  } from "react-router-dom";
 import intelectoImage from "../../assets/INTELECTO_LOGO.png";
 import usuarioImage from "../../assets/usuario.png";
 export function Header() {
+
   const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    setIsLoggedIn(false);
+    setDropdownOpen(false);
+    navigate("/");
+  };
+
   return (
     <header className="flex items-center p-1 bg-white border-b border-gray-800">
       <div className="flex items-center space-x-4">
         <NavLink to="/">
           <img
             src={intelectoImage}
-            alt="Logo de la Universidad"
+            alt="Logo de Intelecto"
             className="w-34 h-28 object-cover rounded-full px-8"
           />
         </NavLink>
@@ -105,18 +115,19 @@ export function Header() {
             alt="Logo de la Universidad"
             className="h-16 object-cover rounded-full px-0 mr-2"
           />
-          <NavLink
-            to="/perfil"
-            className={({ isActive }) =>
-              isActive ? "text-red-700" : "text-black"
-            }
-          >
+          
+          
+            <button
+              onClick={() => setDropdownOpen(!dropdownOpen)}
+              className="focus:outline-none"
+            >
+              
             <svg
               className="cursor-pointer"
               width="30"
               height="30"
               viewBox="0 0 22 22"
-              fill="currentColor"
+              fill={location.pathname === '/perfil' ? 'red' : 'currentColor'}
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
@@ -124,8 +135,31 @@ export function Header() {
                 fill-opacity="0.7"
               />
             </svg>
-            
-          </NavLink>
+            </button>
+            {dropdownOpen && (
+              <div className="absolute right-0 mt-48 w-40 px-2 bg-white border border-gray-300 rounded-lg shadow-lg z-10">
+                <ul className="py-2">
+                  <li>
+                    <NavLink
+                      to="/perfil"
+                      onClick={() => setDropdownOpen(false)}
+                      className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                    >
+                      Perfil
+                    </NavLink>
+                  </li>
+                  <li>
+                    <button
+                      onClick={handleLogout}
+                      className="block w-full text-left px-4 py-2 text-gray-800 hover:bg-gray-100"
+                    >
+                      Cerrar sesión
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            )}
+        
         </div>
       )}
     </header>
