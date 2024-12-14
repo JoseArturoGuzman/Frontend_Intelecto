@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import intelectoImage from "../../assets/INTELECTO_LOGO.png";
 import usuarioImage from "../../assets/usuario.png";
 export function Header() {
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   return (
     <header className="flex items-center p-1 bg-white border-b border-gray-800">
       <div className="flex items-center space-x-4">
@@ -31,7 +31,7 @@ export function Header() {
 
       {!isLoggedIn && (
         <div className="ml-auto ">
-          <NavLink to={"/login"} href="#" className="text-black text-lg">
+          <NavLink to={"/login"} href="#" className="text-black text-lg hover:text-red-600 mx-7">
             Inicar Sesión
           </NavLink>
           <NavLink
