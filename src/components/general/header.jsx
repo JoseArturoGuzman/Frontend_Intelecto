@@ -43,7 +43,7 @@ export function Header() {
         <div className="ml-auto ">
           <NavLink to={"/login"} href="#" className="text-black text-lg hover:text-red-600 mx-7">
             Inicar Sesión
-          </NavLink>
+          </NavLink>  
           <NavLink
             to={"/registro"}
             className="text-red-500 text-lg border border-red-500 mx-7 px-8 py-2"

@@ -8,6 +8,7 @@ import { Favoritos } from "./pages/favoritos/favoritos";
 import { Registro } from "./pages/registro/registro";
 import { Perfil } from "./pages/perfil/perfil";
 import { Error } from "./pages/error/error";
+import { Catalogo } from "./pages/catalogo/catalogo";
  export default function App() {
   return (
     <BrowserRouter>
@@ -39,6 +40,9 @@ import { Error } from "./pages/error/error";
           <Route path="/*" element={
           <Error />
           } />
+          <Route path="/catalogo" element={
+          <Catalogo />
+          }/>
         
       </Routes>
     </BrowserRouter>
