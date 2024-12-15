@@ -33,7 +33,7 @@ export function Banner() {
   ].includes(location.pathname);
 
   return (
-    <div className="relative w-full">
+    <div className="relative w-full ">
       <img
         src={getBannerImage()}
         alt="Background"
@@ -47,14 +47,14 @@ export function Banner() {
         <div className="relative">
           <button
             onClick={() => setOpen(!open)}
-            className="bg-red-600 text-white px-4 py-2 rounded-bl-lg rounded-tl-lg hover:bg-red-700 focus:outline-none"
+            className="bg-red-600 text-white px-4 py-2 rounded-bl-lg rounded-tl-lg hover:bg-red-700 focus:outline-none text-lg"
           >
             Catálogo de libros
           </button>
 
           {/* Dropdown */}
           {open && (
-            <div className="absolute left-0 top-full  w-40 bg-white border border-gray-300 rounded-tl rounded-bl-lg rounded-br shadow-lg">
+            <div className="absolute left-0 top-full  w-40 bg-white border border-gray-300 rounded-tl rounded-bl-lg rounded-br shadow-lg z-10">
               <ul className="py-2">
                 <li>
                   <a
@@ -97,7 +97,7 @@ export function Banner() {
         <input
           type="text"
           placeholder="Buscar recursos..."
-          className="w-1/2 px-4 py-2 rounded-br-lg rounded-tr-lg text-left border border-gray-300 focus:outline-none focus:ring-2 focus:ring-red-500"
+          className="w-1/2 px-4 py-2 rounded-br-lg rounded-tr-lg text-left border border-gray-300 focus:outline-none focus:ring-2 focus:ring-red-500 text-lg"
         />
       </div>
     )}
