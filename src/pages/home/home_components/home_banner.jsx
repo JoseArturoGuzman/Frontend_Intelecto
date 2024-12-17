@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 
 export function Home_banner() {
   return (
-    <div className="relative w-full h-[800px] flex items-center justify-center border">
+    <div className="relative w-full h-[800px] flex items-center justify-center border-b-4 border-red-600">
      
       <img
         src={BackgroundHome}
